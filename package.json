@@ -19,7 +19,11 @@
     "test": "turbo --filter \"./packages/*\" test",
     "typecheck": "turbo --filter \"./packages/*\" typecheck",
     "push": "git add . && git commit -m \"Update on $(date '+%Y-%m-%d %H:%M:%S')\" && git push origin main",
-    "pull": "git fetch upstream && git merge upstream/main && git push origin main"
+    "pull": "git fetch upstream && git merge upstream/main && git push origin main",
+    "diff": "git fetch upstream && git diff upstream/main...main --name-status",
+    "diff:upstream": "git fetch upstream && git diff $(git merge-base upstream/main main)..upstream/main -- $(git ls-files)",
+    "diff:files": "git fetch upstream && git diff upstream/main --name-only",
+    "diff:new": "git fetch upstream && git diff --name-only --diff-filter=A $(git merge-base upstream/main main)..upstream/main"
   },
   "dependencies": {
     "@biomejs/biome": "1.7.3",
