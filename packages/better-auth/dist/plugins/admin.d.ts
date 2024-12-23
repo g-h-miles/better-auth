@@ -1,6 +1,6 @@
 import * as better_call from 'better-call';
 import { APIError } from 'better-call';
-import { U as User, S as Session, j as AuthContext, H as HookEndpointContext, I as InferOptionSchema } from '../auth-BcCDy1CJ.js';
+import { U as User, S as Session, j as AuthContext, H as HookEndpointContext, I as InferOptionSchema } from '../auth-vURrZfZU.js';
 import { z } from 'zod';
 import 'kysely';
 import '../helper-Bi8FQwDD.js';

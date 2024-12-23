@@ -1,5 +1,5 @@
-import { w as Adapter, B as BetterAuthOptions, W as Where, a4 as FieldAttribute, a5 as FieldType, K as KyselyDatabaseType } from './auth-BcCDy1CJ.js';
-export { ah as BetterAuthDbSchema, a8 as FieldAttributeConfig, ag as InferFieldsFromOptions, af as InferFieldsFromPlugins, ac as InferFieldsInput, ad as InferFieldsInputClient, ab as InferFieldsOutput, aa as InferValueType, a7 as InternalAdapter, ae as PluginFieldAttribute, a9 as createFieldAttribute, a6 as createInternalAdapter, ai as getAuthTables } from './auth-BcCDy1CJ.js';
+import { w as Adapter, B as BetterAuthOptions, W as Where, a4 as FieldAttribute, a5 as FieldType, K as KyselyDatabaseType } from './auth-vURrZfZU.js';
+export { ah as BetterAuthDbSchema, a8 as FieldAttributeConfig, ag as InferFieldsFromOptions, af as InferFieldsFromPlugins, ac as InferFieldsInput, ad as InferFieldsInputClient, ab as InferFieldsOutput, aa as InferValueType, a7 as InternalAdapter, ae as PluginFieldAttribute, a9 as createFieldAttribute, a6 as createInternalAdapter, ai as getAuthTables } from './auth-vURrZfZU.js';
 import { z } from 'zod';
 import 'kysely';
 import 'better-call';
