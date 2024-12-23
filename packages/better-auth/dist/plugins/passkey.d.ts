@@ -3,7 +3,7 @@ import { atom } from 'nanostores';
 import * as _better_fetch_fetch from '@better-fetch/fetch';
 import { BetterFetch, BetterFetchOption } from '@better-fetch/fetch';
 import * as _simplewebauthn_types from '@simplewebauthn/types';
-import { AttestationConveyancePreference, AuthenticatorTransportFuture, CredentialDeviceType, PublicKeyCredentialCreationOptionsJSON, AuthenticationResponseJSON } from '@simplewebauthn/types';
+import { CredentialDeviceType, PublicKeyCredentialCreationOptionsJSON, AuthenticationResponseJSON } from '@simplewebauthn/types';
 import * as better_call from 'better-call';
 import { z } from 'zod';
 import { I as InferOptionSchema } from '../auth-vURrZfZU.js';
@@ -14,7 +14,6 @@ import 'jose';
 import 'better-sqlite3';
 
 interface PasskeyOptions {
-    name?: string;
     /**
      * A unique identifier for your website. 'localhost' is okay for
      * local dev
@@ -47,33 +46,6 @@ interface PasskeyOptions {
      * Schema for the passkey model
      */
     schema?: InferOptionSchema<typeof schema>;
-    /**
-     * Authenticator selection options
-     * There are instances where you want to set the ability for a user to leverage user verification (UV) when *they register a new credential. The WebAuthn specification has a list of options that can be chosen in *order to invoke different behaviors by client applications.
-     *
-     * For high assurance applications, you may want to enforce that your users always leverage UV. Some low *assurance applications might not want the additional friction for users, so they may opt to remove the *requirement.
-     */
-    authenticatorSelection?: {
-        authenticatorAttachment: "platform" | "cross-platform";
-        requireResidentKey: boolean;
-        userVerification: "required" | "preferred" | "discouraged";
-    };
-    /**
-     * Attestation options
-     */
-    attestation?: AttestationConveyancePreference;
-    /**
-     * Exclude credentials
-     */
-    excludeCredentials?: {
-        id: string;
-        type: string;
-        transports: AuthenticatorTransportFuture[];
-    }[];
-    /**
-     * Expiration time for the challenge in minutes
-     */
-    age?: number;
 }
 type Passkey = {
     id: string;
