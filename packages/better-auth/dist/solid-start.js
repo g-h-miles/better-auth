@@ -1,1 +1,1 @@
-function n(r){let e=async t=>"handler"in r?r.handler(t.request):r(t.request);return{GET:e,POST:e}}export{n as toSolidStartHandler};
+var u=Object.defineProperty;var t=(r,e)=>u(r,"name",{value:e,configurable:!0});function a(r){let e=t(async n=>"handler"in r?r.handler(n.request):r(n.request),"handler");return{GET:e,POST:e}}t(a,"toSolidStartHandler");export{a as toSolidStartHandler};

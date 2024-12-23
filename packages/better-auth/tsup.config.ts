@@ -53,5 +53,9 @@ export default defineConfig((env) => {
 		splitting: false,
 		cjsInterop: true,
 		skipNodeModulesBundle: true,
+		esbuildOptions(options) {
+			options.keepNames = true;
+			options.preserveSymlinks = true;
+		},
 	};
 });
