@@ -15,6 +15,7 @@
     "test": "pnpm prisma:push && vitest",
     "prisma:push": "prisma db push --schema src/adapters/prisma-adapter/test/schema.prisma",
     "test:adapters": "pnpm prisma:push && vitest adapters",
+    "test:passkey": "vitest plugins/passkey",
     "bump": "bumpp",
     "typecheck": "tsc --noEmit"
   },

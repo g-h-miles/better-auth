@@ -19,7 +19,7 @@
     "test": "turbo --filter \"./packages/*\" test",
     "typecheck": "turbo --filter \"./packages/*\" typecheck",
     "push": "git add . && (git diff --quiet HEAD || git commit -m \"Update on $(date '+%Y-%m-%d %H:%M:%S')\") && git push origin main || true",
-    "pull": "git fetch upstream && (git merge upstream/main -m 'Merge upstream changes' || (echo 'Merge conflicts detected. Please resolve them manually.' && exit 1)) && git push origin main || true",
+    "pull": "git fetch upstream && git merge-base upstream/main main | xargs -I {} sh -c 'git diff --name-only {} upstream/main | grep -v -f <(git diff --name-only {} main)' | xargs -r git checkout upstream/main -- && git add . && (git diff --quiet HEAD || git commit -m 'Update from upstream') && git push origin main || true",
     "diff": "git fetch upstream && git diff upstream/main...main --name-status",
     "diff:upstream": "git fetch upstream && git diff $(git merge-base upstream/main main)..upstream/main -- $(git ls-files)",
     "diff:files": "git fetch upstream && git diff upstream/main --name-only",

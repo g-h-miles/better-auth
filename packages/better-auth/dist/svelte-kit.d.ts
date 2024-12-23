@@ -1,4 +1,4 @@
-import { B as BetterAuthOptions } from './auth-vURrZfZU.js';
+import { B as BetterAuthOptions } from './auth-BcCDy1CJ.js';
 import 'kysely';
 import 'better-call';
 import 'zod';

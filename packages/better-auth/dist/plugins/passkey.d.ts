@@ -6,7 +6,7 @@ import * as _simplewebauthn_types from '@simplewebauthn/types';
 import { CredentialDeviceType, PublicKeyCredentialCreationOptionsJSON, AuthenticationResponseJSON } from '@simplewebauthn/types';
 import * as better_call from 'better-call';
 import { z } from 'zod';
-import { I as InferOptionSchema } from '../auth-vURrZfZU.js';
+import { I as InferOptionSchema } from '../auth-BcCDy1CJ.js';
 import 'kysely';
 import '../helper-Bi8FQwDD.js';
 import '../index-4d8GiU4g.js';

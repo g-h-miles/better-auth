@@ -1,7 +1,7 @@
 import * as better_call from 'better-call';
 import { APIError } from 'better-call';
 import { z } from 'zod';
-import { H as HookEndpointContext } from '../auth-CfuNyKFj.cjs';
+import { H as HookEndpointContext } from '../auth-BqCHpLdr.cjs';
 import 'kysely';
 import '../helper-Bi8FQwDD.cjs';
 import '../index-BxVuNcHr.cjs';
@@ -49,11 +49,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     openapi: {
@@ -89,11 +89,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     openapi: {
@@ -128,11 +128,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     SERVER_ONLY: true;
@@ -162,11 +162,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     SERVER_ONLY: true;
@@ -197,11 +197,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     SERVER_ONLY: true;
@@ -240,11 +240,11 @@ declare const emailOTP: (options: EmailOTPOptions) => {
                     email: z.ZodString;
                     type: z.ZodEnum<["email-verification", "sign-in", "forget-password"]>;
                 }, "strip", z.ZodTypeAny, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }, {
-                    email: string;
                     type: "sign-in" | "forget-password" | "email-verification";
+                    email: string;
                 }>;
                 metadata: {
                     SERVER_ONLY: true;

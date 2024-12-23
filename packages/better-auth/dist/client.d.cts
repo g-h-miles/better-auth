@@ -1,4 +1,4 @@
-import { a as BASE_ERROR_CODES, d as BetterAuthPlugin } from './auth-CfuNyKFj.cjs';
+import { a as BASE_ERROR_CODES, d as BetterAuthPlugin } from './auth-BqCHpLdr.cjs';
 import { ClientOptions, InferClientAPI, InferActions, InferErrorCodes, BetterAuthClientPlugin, IsSignal } from './types.cjs';
 export { AtomListener, InferAdditionalFromClient, InferPluginsFromClient, InferSessionFromClient, InferUserFromClient, Store } from './types.cjs';
 import * as nanostores from 'nanostores';

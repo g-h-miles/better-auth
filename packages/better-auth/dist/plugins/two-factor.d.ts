@@ -1,7 +1,7 @@
 import * as better_call from 'better-call';
 import { APIError } from 'better-call';
 import { z } from 'zod';
-import { I as InferOptionSchema, U as User, A as AuthEndpoint, S as Session, H as HookEndpointContext } from '../auth-vURrZfZU.js';
+import { I as InferOptionSchema, U as User, A as AuthEndpoint, S as Session, H as HookEndpointContext } from '../auth-BcCDy1CJ.js';
 import { L as LiteralString } from '../helper-Bi8FQwDD.js';
 import * as _better_fetch_fetch from '@better-fetch/fetch';
 import 'kysely';

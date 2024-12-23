@@ -1,9 +1,9 @@
-export { O as OrganizationOptions, o as organization } from './index-Bv_iFQO1.cjs';
+export { O as OrganizationOptions, o as organization } from './index-DvinPl7S.cjs';
 export { TwoFactorOptions, TwoFactorProvider, TwoFactorTable, UserWithTwoFactor, twoFactor, twoFactorClient } from './plugins/two-factor.cjs';
 export { username } from './plugins/username.cjs';
 export { bearer } from './plugins/bearer.cjs';
-import { H as HookEndpointContext } from './auth-CfuNyKFj.cjs';
-export { A as AuthEndpoint, h as AuthMiddleware, d as BetterAuthPlugin, c as HookAfterHandler, b as HookBeforeHandler, I as InferOptionSchema, e as InferPluginErrorCodes, P as PluginSchema, g as createAuthEndpoint, f as createAuthMiddleware, o as optionsMiddleware } from './auth-CfuNyKFj.cjs';
+import { H as HookEndpointContext } from './auth-BqCHpLdr.cjs';
+export { A as AuthEndpoint, h as AuthMiddleware, d as BetterAuthPlugin, c as HookAfterHandler, b as HookBeforeHandler, I as InferOptionSchema, e as InferPluginErrorCodes, P as PluginSchema, g as createAuthEndpoint, f as createAuthMiddleware, o as optionsMiddleware } from './auth-BqCHpLdr.cjs';
 export { H as HIDE_METADATA } from './hide-metadata-DEHJp1rk.cjs';
 export { magicLink } from './plugins/magic-link.cjs';
 export { UserWithPhoneNumber, phoneNumber } from './plugins/phone-number.cjs';

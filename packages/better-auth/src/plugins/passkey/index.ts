@@ -9,6 +9,7 @@ import type {
 	AuthenticatorTransportFuture,
 	CredentialDeviceType,
 	PublicKeyCredentialCreationOptionsJSON,
+	AttestationConveyancePreference,
 } from "@simplewebauthn/types";
 import { APIError } from "better-call";
 import { generateRandomString } from "../../crypto/random";
@@ -35,6 +36,7 @@ interface WebAuthnChallengeValue {
 }
 
 export interface PasskeyOptions {
+	name?: string;
 	/**
 	 * A unique identifier for your website. 'localhost' is okay for
 	 * local dev
@@ -67,6 +69,36 @@ export interface PasskeyOptions {
 	 * Schema for the passkey model
 	 */
 	schema?: InferOptionSchema<typeof schema>;
+	/**
+	 * Authenticator selection options
+	 * There are instances where you want to set the ability for a user to leverage user verification (UV) when *they register a new credential. The WebAuthn specification has a list of options that can be chosen in *order to invoke different behaviors by client applications.
+	 *
+	 * For high assurance applications, you may want to enforce that your users always leverage UV. Some low *assurance applications might not want the additional friction for users, so they may opt to remove the *requirement.
+	 */
+	authenticatorSelection?: {
+		authenticatorAttachment: "platform" | "cross-platform";
+		requireResidentKey: boolean;
+		userVerification: "required" | "preferred" | "discouraged";
+	};
+
+	/**
+	 * Attestation options
+	 */
+	attestation?: AttestationConveyancePreference;
+
+	/**
+	 * Exclude credentials
+	 */
+	excludeCredentials?: {
+		id: string;
+		type: string;
+		transports: AuthenticatorTransportFuture[];
+	}[];
+
+	/**
+	 * Expiration time for the challenge in minutes
+	 */
+	age?: number;
 }
 
 export type Passkey = {
@@ -102,7 +134,7 @@ export const passkey = (options?: PasskeyOptions) => {
 			...options?.advanced,
 		},
 	};
-	const expirationTime = new Date(Date.now() + 1000 * 60 * 5);
+	const expirationTime = new Date(Date.now() + 1000 * 60 * (options?.age || 5));
 	const currentTime = new Date();
 	const maxAgeInSeconds = Math.floor(
 		(expirationTime.getTime() - currentTime.getTime()) / 1000,
@@ -253,7 +285,7 @@ export const passkey = (options?: PasskeyOptions) => {
 						rpID: opts.rpID,
 						userID,
 						userName: session.user.email || session.user.id,
-						attestationType: "none",
+						attestationType: opts.attestation || "none",
 						excludeCredentials: userPasskeys.map((passkey) => ({
 							id: passkey.credentialID,
 							transports: passkey.transports?.split(
@@ -414,7 +446,8 @@ export const passkey = (options?: PasskeyOptions) => {
 					}
 					const options = await generateAuthenticationOptions({
 						rpID: opts.rpID,
-						userVerification: "preferred",
+						userVerification:
+							opts.authenticatorSelection?.userVerification || "preferred",
 						...(userPasskeys.length
 							? {
 									allowCredentials: userPasskeys.map((passkey) => ({
@@ -549,7 +582,7 @@ export const passkey = (options?: PasskeyOptions) => {
 						} = registrationInfo;
 						const pubKey = Buffer.from(credentialPublicKey).toString("base64");
 						const newPasskey: Passkey = {
-							name: ctx.body.name,
+							name: options?.name || ctx.body.name,
 							userId: userData.id,
 							id: ctx.context.generateId({ model: "passkey" }),
 							credentialID,
@@ -673,7 +706,8 @@ export const passkey = (options?: PasskeyOptions) => {
 									",",
 								) as AuthenticatorTransportFuture[],
 							},
-							requireUserVerification: false,
+							requireUserVerification:
+								opts.authenticatorSelection?.userVerification === "required",
 						});
 						const { verified } = verification;
 						if (!verified)

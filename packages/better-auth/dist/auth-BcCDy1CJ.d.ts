@@ -591,15 +591,15 @@ declare const verificationSchema: z.ZodObject<{
     expiresAt: z.ZodDate;
     identifier: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    id: string;
     value: string;
+    id: string;
     createdAt: Date;
     updatedAt: Date;
     expiresAt: Date;
     identifier: string;
 }, {
-    id: string;
     value: string;
+    id: string;
     expiresAt: Date;
     identifier: string;
     createdAt?: Date | undefined;
@@ -1615,16 +1615,16 @@ declare const createInternalAdapter: (adapter: Adapter, ctx: {
     }[]>;
     updateAccount: (accountId: string, data: Partial<Account>) => Promise<any>;
     createVerificationValue: (data: Omit<Verification, "createdAt" | "id" | "updatedAt"> & Partial<Verification>) => Promise<{
-        id: string;
         value: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
         expiresAt: Date;
         identifier: string;
     }>;
     findVerificationValue: (identifier: string) => Promise<{
-        id: string;
         value: string;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
         expiresAt: Date;
